@@ -25,4 +25,4 @@ jobs:
       run: |
         python main.py
       env:
-        NAME: "Your Name"
+        NAME: "Dennis"
