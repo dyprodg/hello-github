@@ -1,0 +1,22 @@
+name: Greeting
+
+on:
+  workflow_dispatch:
+    inputs:
+      first_name:
+        description: 'First name'
+        required: true
+      last_name:
+        description: 'Last name'
+        required: true
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run greeting action
+      uses: ./
+      with:
+        first_name: ${{ github.event.inputs.first_name }}
+        last_name: ${{ github.event.inputs.last_name }}
